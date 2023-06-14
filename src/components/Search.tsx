@@ -1,5 +1,5 @@
 //Search countries and search by region
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
 import { regions } from '../countryData'
 
 interface Props {
