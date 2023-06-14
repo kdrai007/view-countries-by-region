@@ -15,7 +15,7 @@ const Search = ({ searchedCountry, setSearchedCountry, selectedValue, handleChan
 
     return (
         <div className={`flex items-start gap-8 md:gap-0 md:items-center justify-between flex-col md:flex-row px-5  md:px-10 xl:px-[60px] py-10 ${theme ? ' text-black' : ' text-white'}`}>
-            <div className={`flex bg-white items-center px-2 py-3 w-full md:w-[20rem] rounded-sm ${theme ? 'bg-white text-black' : 'bg-[#222121] text-white'}`} >
+            <div className={`flex  items-center px-2 py-3 w-full md:w-[20rem] rounded-sm ${theme ? 'bg-white text-black' : 'bg-[#222121] text-white'}`} >
                 <img src={theme ? '/search-dark.svg' : '/search-light.svg'} className="w-[24px] h-[24px] mr-2" />
                 <input type="text" placeholder='search country...' className={`${theme ? 'bg-white text-black' : 'bg-[#222121] text-white'} w-full outline-none`} value={searchedCountry} onChange={(e) => setSearchedCountry(e.target.value)} onKeyDown={handleInputChange} />
 
