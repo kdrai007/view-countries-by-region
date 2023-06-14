@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
     country: string;
@@ -5,16 +6,17 @@ type Props = {
     region: string;
     capital?: string[];
     imgUrl?: string;
+    theme: boolean;
 }
 
-const CountryCard = ({ country, population, region, capital, imgUrl }: Props) => {
-
+const CountryCard = ({ country, population, region, capital, imgUrl, theme }: Props) => {
+    const navigate = useNavigate();
     function handleClick() {
-        fetch(`https://restcountries.com/v3.1/name/${country}`).then(res => res.json()).then(data => console.log(data))
+        navigate(`/${country}`)
     }
 
     return (
-        <div className='grid grid-rows-2 shadow-md text-start rounded-md cursor-pointer overflow-hidden max-h-[25rem]' onClick={handleClick}>
+        <div className={`grid grid-rows-2 shadow-md text-start rounded-md cursor-pointer overflow-hidden max-h-[25rem] ${theme ? 'bg-white text-black' : 'bg-[#222121] text-white'}`} onClick={handleClick}>
             <div className=''>
                 <img src={imgUrl} alt={country} className='w-full h-full object-cover' />
             </div>
