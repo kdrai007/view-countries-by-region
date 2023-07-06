@@ -39,6 +39,7 @@ function Home({ theme }: Props) {
 
   // for SearchedItem;
   async function fetchApi(key: string, value: string) {
+    setLoading(true);
     try {
       if (key === 'all') {
         const res = await fetch(`https://restcountries.com/v3.1/${key}`);
@@ -47,6 +48,7 @@ function Home({ theme }: Props) {
       }
       const res = await fetch(`https://restcountries.com/v3.1/${key}/${value}`);
       const data = await res.json();
+      setLoading(false);
       return data;
     } catch (err) {
       console.log(err);
@@ -77,7 +79,7 @@ function Home({ theme }: Props) {
   }
 
   return (
-    <main className={`${theme ? 'bg-[#e4e3e3] text-black' : 'bg-[#3a3939] text-white'}`}>
+    <main className={`${theme ? 'bg-[#e4e3e3] text-black' : 'bg-[#3a3939] text-white'} min-h-screen`}>
       <Search
         selectedValue={selectedValue}
         handleChange={handleChange}

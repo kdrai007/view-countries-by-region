@@ -1,89 +1,199 @@
-export interface InitialCountry {
-  name: {
-    common: string;
-    official: string;
-    nativeName: {
-      [key: string]: {
-        official: string;
-        common: string;
-      };
-    };
-  };
-  tld: string[];
-  cca2: string;
-  ccn3: string;
-  cca3: string;
-  cioc: string;
-  independent: boolean;
-  status: string;
-  unMember: boolean;
-  currencies: {
-    [key: string]: {
-      name: string;
-      symbol: string;
-    };
-  };
-  idd: {
-    root: string;
-    suffixes: string[];
-  };
-  capital: string[];
-  altSpellings: string[];
-  region: string;
-  subregion: string;
-  languages: {
-    [key: string]: string;
-  };
-  translations: {
-    [key: string]: {
-      official: string;
-      common: string;
-    };
-  };
-  latlng: number[];
-  landlocked: boolean;
-  borders: string[];
-  area: number;
-  demonyms: {
-    [key: string]: {
-      f: string;
-      m: string;
-    };
-  };
-  flag: string;
-  maps: {
-    googleMaps: string;
-    openStreetMaps: string;
-  };
-  population: number;
-  gini: {
-    [key: string]: number;
-  };
-  fifa: string;
-  car: {
-    signs: string[];
-    side: string;
-  };
-  timezones: string[];
-  continents: string[];
-  flags: {
-    png: string;
-    svg: string;
-    alt: string;
-  };
-  coatOfArms: {
-    png: string;
-    svg: string;
-  };
-  startOfWeek: string;
-  capitalInfo: {
-    latlng: number[];
-  };
-  postalCode: {
-    format: string;
-    regex: string;
-  };
-}
+export const countryCodes: { [key: string]: string } = {
+  CHN: 'China',
+  USA: 'United States',
+  IND: 'India',
+  JPN: 'Japan',
+  GBR: 'United Kingdom',
+  AFG: 'Afghanistan',
+  ALB: 'Albania',
+  DZA: 'Algeria',
+  AND: 'Andorra',
+  AGO: 'Angola',
+  ATG: 'Antigua and Barbuda',
+  ARG: 'Argentina',
+  ARM: 'Armenia',
+  AUS: 'Australia',
+  AUT: 'Austria',
+  AZE: 'Azerbaijan',
+  BHS: 'Bahamas',
+  BHR: 'Bahrain',
+  BGD: 'Bangladesh',
+  BRB: 'Barbados',
+  BLR: 'Belarus',
+  BEL: 'Belgium',
+  BLZ: 'Belize',
+  BEN: 'Benin',
+  BTN: 'Bhutan',
+  BOL: 'Bolivia',
+  BIH: 'Bosnia and Herzegovina',
+  BWA: 'Botswana',
+  BRA: 'Brazil',
+  BRN: 'Brunei',
+  BGR: 'Bulgaria',
+  BFA: 'Burkina Faso',
+  BDI: 'Burundi',
+  CPV: 'Cabo Verde',
+  KHM: 'Cambodia',
+  CMR: 'Cameroon',
+  CAN: 'Canada',
+  CAF: 'Central African Republic',
+  TCD: 'Chad',
+  CHL: 'Chile',
+  COL: 'Colombia',
+  COM: 'Comoros',
+  COD: 'Democratic Republic of the Congo',
+  COG: 'Republic of the Congo',
+  CRI: 'Costa Rica',
+  HRV: 'Croatia',
+  CUB: 'Cuba',
+  CYP: 'Cyprus',
+  CZE: 'Czech Republic',
+  DNK: 'Denmark',
+  DJI: 'Djibouti',
+  DMA: 'Dominica',
+  DOM: 'Dominican Republic',
+  TLS: 'East Timor',
+  ECU: 'Ecuador',
+  EGY: 'Egypt',
+  SLV: 'El Salvador',
+  GNQ: 'Equatorial Guinea',
+  ERI: 'Eritrea',
+  EST: 'Estonia',
+  SWZ: 'Eswatini',
+  ETH: 'Ethiopia',
+  FJI: 'Fiji',
+  FIN: 'Finland',
+  FRA: 'France',
+  GAB: 'Gabon',
+  GMB: 'Gambia',
+  GEO: 'Georgia',
+  DEU: 'Germany',
+  GHA: 'Ghana',
+  GRC: 'Greece',
+  GRD: 'Grenada',
+  GTM: 'Guatemala',
+  GIN: 'Guinea',
+  GNB: 'Guinea-Bissau',
+  GUY: 'Guyana',
+  HTI: 'Haiti',
+  HND: 'Honduras',
+  HUN: 'Hungary',
+  ISL: 'Iceland',
+  IDN: 'Indonesia',
+  IRN: 'Iran',
+  IRQ: 'Iraq',
+  IRL: 'Ireland',
+  ISR: 'Israel',
+  ITA: 'Italy',
+  CIV: 'Ivory Coast',
+  JAM: 'Jamaica',
+  JOR: 'Jordan',
+  KAZ: 'Kazakhstan',
+  KEN: 'Kenya',
+  KIR: 'Kiribati',
+  KWT: 'Kuwait',
+  KGZ: 'Kyrgyzstan',
+  LAO: 'Laos',
+  LVA: 'Latvia',
+  LBN: 'Lebanon',
+  LSO: 'Lesotho',
+  LBR: 'Liberia',
+  LBY: 'Libya',
+  LIE: 'Liechtenstein',
+  LTU: 'Lithuania',
+  LUX: 'Luxembourg',
+  MDG: 'Madagascar',
+  MWI: 'Malawi',
+  MYS: 'Malaysia',
+  MDV: 'Maldives',
+  MLI: 'Mali',
+  MLT: 'Malta',
+  MHL: 'Marshall Islands',
+  MRT: 'Mauritania',
+  MUS: 'Mauritius',
+  MEX: 'Mexico',
+  FSM: 'Micronesia',
+  MDA: 'Moldova',
+  MCO: 'Monaco',
+  MNG: 'Mongolia',
+  MNE: 'Montenegro',
+  MAR: 'Morocco',
+  MOZ: 'Mozambique',
+  MMR: 'Myanmar',
+  NAM: 'Namibia',
+  NRU: 'Nauru',
+  NPL: 'Nepal',
+  NLD: 'Netherlands',
+  NZL: 'New Zealand',
+  NIC: 'Nicaragua',
+  NER: 'Niger',
+  NGA: 'Nigeria',
+  PRK: 'North Korea',
+  MKD: 'North Macedonia',
+  NOR: 'Norway',
+  OMN: 'Oman',
+  PAK: 'Pakistan',
+  PLW: 'Palau',
+  PAN: 'Panama',
+  PNG: 'Papua New Guinea',
+  PRY: 'Paraguay',
+  PER: 'Peru',
+  PHL: 'Philippines',
+  POL: 'Poland',
+  PRT: 'Portugal',
+  QAT: 'Qatar',
+  ROU: 'Romania',
+  RUS: 'Russia',
+  RWA: 'Rwanda',
+  KNA: 'Saint Kitts and Nevis',
+  LCA: 'Saint Lucia',
+  VCT: 'Saint Vincent and the Grenadines',
+  WSM: 'Samoa',
+  SMR: 'San Marino',
+  STP: 'Sao Tome and Principe',
+  SAU: 'Saudi Arabia',
+  SEN: 'Senegal',
+  SRB: 'Serbia',
+  SYC: 'Seychelles',
+  SLE: 'Sierra Leone',
+  SGP: 'Singapore',
+  SVK: 'Slovakia',
+  SVN: 'Slovenia',
+  SLB: 'Solomon Islands',
+  SOM: 'Somalia',
+  ZAF: 'South Africa',
+  KOR: 'South Korea',
+  SSD: 'South Sudan',
+  ESP: 'Spain',
+  LKA: 'Sri Lanka',
+  SDN: 'Sudan',
+  SUR: 'Suriname',
+  SWE: 'Sweden',
+  CHE: 'Switzerland',
+  SYR: 'Syria',
+  TJK: 'Tajikistan',
+  TZA: 'Tanzania',
+  THA: 'Thailand',
+  TGO: 'Togo',
+  TON: 'Tonga',
+  TTO: 'Trinidad and Tobago',
+  TUN: 'Tunisia',
+  TUR: 'Turkey',
+  TKM: 'Turkmenistan',
+  TUV: 'Tuvalu',
+  UGA: 'Uganda',
+  UKR: 'Ukraine',
+  ARE: 'United Arab Emirates',
+  URY: 'Uruguay',
+  UZB: 'Uzbekistan',
+  VUT: 'Vanuatu',
+  VAT: 'Vatican City',
+  VEN: 'Venezuela',
+  VNM: 'Vietnam',
+  YEM: 'Yemen',
+  ZMB: 'Zambia',
+  ZWE: 'Zimbabwe',
+};
 
 export const regions = [
   'All',
